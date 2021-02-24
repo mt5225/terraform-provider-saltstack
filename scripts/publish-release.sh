@@ -17,7 +17,7 @@ then
 fi
 
 GITHUB_USER="${1:-nbering}"
-GITHUB_REPO="${2:-terraform-provider-ansible}"
+GITHUB_REPO="${2:-terraform-provider-saltstack}"
 RELEASE_ARGS="--user ${GITHUB_USER} --repo ${GITHUB_REPO} --tag ${VERSION}"
 
 github-release release ${RELEASE_ARGS} \

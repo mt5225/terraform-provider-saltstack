@@ -2,11 +2,11 @@
 
 set -e -x
 
-cat terraform-provider-ansible/.git/ref
+cat terraform-provider-saltstack/.git/ref
 
 mkdir -p /go/src/github.com/nbering
 
-ln -s  "$(pwd)/terraform-provider-ansible" "/go/src/github.com/mt5225/terraform-provider-saltstack"
+ln -s  "$(pwd)/terraform-provider-saltstack" "/go/src/github.com/mt5225/terraform-provider-saltstack"
 
 pushd /go/src/github.com/mt5225/terraform-provider-saltstack
     make test

@@ -7,10 +7,10 @@ image_resource:
     repository: golang
 
 inputs:
-  - name: terraform-provider-ansible
+  - name: terraform-provider-saltstack
 
 outputs:
   - name: release-binaries
 
 run:
-  path: ./terraform-provider-ansible/ci/release-build.sh
+  path: ./terraform-provider-saltstack/ci/release-build.sh

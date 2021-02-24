@@ -8,7 +8,7 @@ import (
 
 func resourceGroupVar() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceAnsibleGroupVarCreate,
+		Create: resourcesaltstackGroupVarCreate,
 		Read:   schema.Noop,
 		Update: schema.Noop,
 		Delete: schema.Noop,
@@ -40,7 +40,7 @@ func resourceGroupVar() *schema.Resource {
 	}
 }
 
-func resourceAnsibleGroupVarCreate(d *schema.ResourceData, _ interface{}) error {
+func resourcesaltstackGroupVarCreate(d *schema.ResourceData, _ interface{}) error {
 	d.SetId(fmt.Sprintf("%s/%s", d.Get("inventory_group_name"), d.Get("key")))
 	return nil
 }

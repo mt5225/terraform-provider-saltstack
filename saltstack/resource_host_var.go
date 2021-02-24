@@ -8,7 +8,7 @@ import (
 
 func resourceHostVar() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceAnsibleHostVarCreate,
+		Create: resourcesaltstackHostVarCreate,
 		Read:   schema.Noop,
 		Update: schema.Noop,
 		Delete: schema.Noop,
@@ -40,7 +40,7 @@ func resourceHostVar() *schema.Resource {
 	}
 }
 
-func resourceAnsibleHostVarCreate(d *schema.ResourceData, _ interface{}) error {
+func resourcesaltstackHostVarCreate(d *schema.ResourceData, _ interface{}) error {
 	d.SetId(fmt.Sprintf("%s/%s", d.Get("inventory_hostname"), d.Get("key")))
 	return nil
 }

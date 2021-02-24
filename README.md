@@ -1,3 +1,3 @@
-# Ansible Terraform Provider
+# saltstack Terraform Provider
 
 A Terraform provider serving as an interop layer for an SaltStack

@@ -6,7 +6,7 @@ import (
 
 func resourceGroup() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceAnsibleInventoryGroupCreate,
+		Create: resourcesaltstackInventoryGroupCreate,
 		Read:   schema.Noop,
 		Update: schema.Noop,
 		Delete: schema.Noop,
@@ -40,7 +40,7 @@ func resourceGroup() *schema.Resource {
 	}
 }
 
-func resourceAnsibleInventoryGroupCreate(d *schema.ResourceData, _ interface{}) error {
+func resourcesaltstackInventoryGroupCreate(d *schema.ResourceData, _ interface{}) error {
 	d.SetId(d.Get("inventory_group_name").(string))
 	return nil
 }

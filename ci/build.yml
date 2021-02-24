@@ -7,7 +7,7 @@ image_resource:
     repository: golang
 
 inputs:
-  - name: terraform-provider-ansible
+  - name: terraform-provider-saltstack
 
 run:
-  path: ./terraform-provider-ansible/ci/run-tests.sh
+  path: ./terraform-provider-saltstack/ci/run-tests.sh

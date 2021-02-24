@@ -8,12 +8,12 @@ import (
 	"github.com/hashicorp/terraform/terraform"
 )
 
-func TestAnsibleHost(t *testing.T) {
+func TestsaltstackHost(t *testing.T) {
 	r.Test(t, r.TestCase{
 		Providers: testAccProviders,
 		Steps: []r.TestStep{
 			r.TestStep{
-				Config: testAnsibleHostConfig,
+				Config: testsaltstackHostConfig,
 				Check: func(s *terraform.State) error {
 					rID := s.RootModule().Outputs["host_id"].Value
 					if "example.medstack.net" != rID {
@@ -27,8 +27,8 @@ func TestAnsibleHost(t *testing.T) {
 	})
 }
 
-var testAnsibleHostConfig = `
-resource "ansible_host" "test" {
+var testsaltstackHostConfig = `
+resource "saltstack_host" "test" {
 	inventory_hostname = "example.medstack.net"
 	groups = ["dbservers"]
 	vars = {
@@ -38,6 +38,6 @@ resource "ansible_host" "test" {
 }
 
 output "host_id" {
-	value = "${ansible_host.test.id}"
+	value = "${saltstack_host.test.id}"
 }
 `
